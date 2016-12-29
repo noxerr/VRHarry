@@ -3,35 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimatePublic : MonoBehaviour {
-
-    //public float AccelerometerUpdateInterval = 1.0f / 100.0f;
-    //public float LowPassKernelWidthInSeconds = 0.001f;
-    private float LowPassFilterFactor = 0.8f;
-    private Vector3 lowPassValue = Vector3.zero;
-    private Gyroscope gyro; 
+    public Material[] Materiales;
+    private float elapsed = 0;
+    private Vector2 offset;
 
 	// Use this for initialization
 	void Start () {
-        Input.gyro.enabled = true;
-        gyro = Input.gyro;
+        for (int i = 0; i < Materiales.Length; i++)
+        {
+            Materiales[i].mainTextureOffset = new Vector2(0, 0);
+        }
 	}
 
 
-    Vector3 lowpass()
-    {
-        //float LowPassFilterFactor = AccelerometerUpdateInterval / LowPassKernelWidthInSeconds; // tweakable
-        lowPassValue = Vector3.Lerp(lowPassValue, Input.acceleration, LowPassFilterFactor);
-        return lowPassValue;
-    }
+    
 
 	
 	// Update is called once per frame
-	void Update () {
-        AccelerationEvent[] events = Input.accelerationEvents;
-        for (int i = 0; i < events.Length; i++)
+	void FixedUpdate () {
+        if (elapsed > 0.4f)
         {
-            Debug.LogError("Accel: " + events[i].acceleration);
+            elapsed = 0;
+            for (int i = 0; i < Materiales.Length; i++)
+            {
+                offset = Materiales[i].mainTextureOffset;
+                if (offset.x > 0.75f)
+                {
+                    offset.x = 0;
+                    offset.y += (.5f - offset.y);
+                }
+                else offset.x += 0.25f;
+                Materiales[i].mainTextureOffset = offset;
+            }
         }
-        Debug.LogError("Gyro accel: " + gyro.userAcceleration + " - Rotation: " + Quaternion.ToEulerAngles(gyro.attitude));
+        elapsed += Time.deltaTime;
 	}
 }
