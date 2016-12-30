@@ -10,7 +10,7 @@ public class StartCamera : MonoBehaviour {
     private Transform[] coordenadas;
     private Vector3 step;
     private int iteracion = 0;
-    private float elapsedTime = 2.5f;
+    private float elapsedTime = 2f;
 	// Use this for initialization
 	void Start () {
         coordenadas = ListaPasos.GetComponentsInChildren<Transform>();
@@ -25,7 +25,7 @@ public class StartCamera : MonoBehaviour {
                 iteracion++;
                 if (iteracion < coordenadas.Length)
                 {
-                    elapsedTime = 2f;
+                    elapsedTime = 1.7f;
                     step = (coordenadas[iteracion].position - coordenadas[iteracion - 1].position) / elapsedTime;
                 }
                 else

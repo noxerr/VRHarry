@@ -10,6 +10,7 @@ public class Drive : MonoBehaviour {
     //public string Notes = "This component shouldn't be removed, it does important stuff.";
     public bool driveConMirada = false;
     public bool hasBroom = false;
+    public float maxSpeed = 8;
 
     private float LowPassFilterFactor = 0.8f;
     private Vector3 lowPassValue = Vector3.zero;
@@ -26,7 +27,7 @@ public class Drive : MonoBehaviour {
 	void Start () {
         Input.gyro.enabled = true;
         gyro = Input.gyro;
-        rb = GetComponent<Rigidbody>();
+        rb = Camera.GetComponent<Rigidbody>();
         movingDir = Vector3.zero;
 	}
 
@@ -40,6 +41,12 @@ public class Drive : MonoBehaviour {
             {
                 if (gyroAccel.z < -movingThresHold) moving = false;
                 else if (driveConMirada) movingDir = Camera.transform.forward;
+
+                //aplicar fuerzas
+                //rb.AddForce(movingDir, ForceMode.VelocityChange);
+                rb.velocity = movingDir*maxSpeed;
+                Debug.Log("Speed: " + Mathf.Sqrt(rb.velocity.sqrMagnitude));
+                Debug.Log("SpeedNoSqr: " + rb.velocity.sqrMagnitude);
             }
             else
             {
@@ -48,7 +55,7 @@ public class Drive : MonoBehaviour {
 
             }
 
-            //aplicar fuerzas
+            
 
         }
         
