@@ -22,6 +22,8 @@ public class Drive : MonoBehaviour {
     private bool moving = false;
     public float movingThresHold = 0.4f;
 
+    private float lastChangeOfMov = 0;
+
 
 	// Use this for initialization
 	void Start () {
@@ -37,21 +39,20 @@ public class Drive : MonoBehaviour {
         if (hasBroom)
         {
             gyroAccel = gyro.userAcceleration;
+            if (lastChangeOfMov > 0) lastChangeOfMov -= Time.deltaTime;
             if (moving)
             {
-                if (gyroAccel.z < -movingThresHold) moving = false;
+                if (gyroAccel.z < -movingThresHold && lastChangeOfMov <= 0) { moving = false; lastChangeOfMov = 1; movingDir = Vector3.zero}
                 else if (driveConMirada) movingDir = Camera.transform.forward;
 
                 //aplicar fuerzas
                 //rb.AddForce(movingDir, ForceMode.VelocityChange);
                 rb.velocity = movingDir*maxSpeed;
-                Debug.Log("Speed: " + Mathf.Sqrt(rb.velocity.sqrMagnitude));
-                Debug.Log("SpeedNoSqr: " + rb.velocity.sqrMagnitude);
             }
             else
             {
                 //aceleramos?
-                if (gyroAccel.z > movingThresHold) moving = true;
+                if (gyroAccel.z > movingThresHold && lastChangeOfMov <= 0) { moving = true; lastChangeOfMov = 1; }
 
             }
 
