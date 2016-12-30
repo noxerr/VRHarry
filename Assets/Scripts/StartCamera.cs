@@ -23,11 +23,16 @@ public class StartCamera : MonoBehaviour {
             elapsedTime -= Time.deltaTime;
             if (elapsedTime < 0) {
                 iteracion++;
-                if (iteracion < coordenadas.Length) {
+                if (iteracion < coordenadas.Length)
+                {
                     elapsedTime = 2f;
                     step = (coordenadas[iteracion].position - coordenadas[iteracion - 1].position) / elapsedTime;
                 }
-                else activated = false;
+                else
+                {
+                    GetComponentInParent<Drive>().hasBroom = true;
+                    activated = false;
+                }
             }
             else {
                 Camera.transform.position += step * Time.deltaTime;
