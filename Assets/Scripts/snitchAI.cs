@@ -10,6 +10,10 @@ public class snitchAI : MonoBehaviour {
 	public Vector3 Min;
 	private Vector3 playerPos;
 
+	/*Good v0.1 Min Max positions:
+		Max:	247		21		369
+		Min:	-23		-59		228
+	*/
 	// Use this for initialization
 	void Start () {
 		playerPos = playerCamera.transform.position;
