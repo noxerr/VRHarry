@@ -7,9 +7,9 @@ public class NarniaDoorRotation : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		hingePoint = this.transform.GetChild(0).position;
-		rotateDoor(90);
+		//rotateDoor(90);
 	}
-	void rotateDoor(float angle){
+	public void rotateDoor(float angle = 90){
 		transform.RotateAround (hingePoint, new Vector3 (0, 1, 0), angle);
 	}
 	// Update is called once per frame
