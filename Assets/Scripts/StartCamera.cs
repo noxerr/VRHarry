@@ -26,11 +26,13 @@ public class StartCamera : MonoBehaviour {
                 if (iteracion < coordenadas.Length)
                 {
                     elapsedTime = 1.7f;
-                    step = (coordenadas[iteracion].position - coordenadas[iteracion - 1].position) / elapsedTime;
+                    //step = (coordenadas[iteracion].position - coordenadas[iteracion - 1].position) / elapsedTime;
+                    step = (coordenadas[iteracion].position - Camera.transform.position) / elapsedTime;
                 }
                 else
                 {
                     GetComponentInParent<Drive>().hasBroom = true;
+                    //GameObject.FindGameObjectWithTag("Command").GetComponent<Commands>().startRecCommand("up");
                     activated = false;
                 }
             }

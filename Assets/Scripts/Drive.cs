@@ -42,7 +42,7 @@ public class Drive : MonoBehaviour {
             if (lastChangeOfMov > 0) lastChangeOfMov -= Time.deltaTime;
             if (moving)
             {
-                if (gyroAccel.z < -movingThresHold && lastChangeOfMov <= 0) { moving = false; lastChangeOfMov = 1; movingDir = Vector3.zero}
+                if (gyroAccel.z < -movingThresHold && lastChangeOfMov <= 0) { moving = false; lastChangeOfMov = 1; movingDir = Vector3.zero; }
                 else if (driveConMirada) movingDir = Camera.transform.forward;
 
                 //aplicar fuerzas
