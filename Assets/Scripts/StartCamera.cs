@@ -10,7 +10,7 @@ public class StartCamera : MonoBehaviour {
     private Transform[] coordenadas;
     private Vector3 step;
     private int iteracion = 0;
-    private float elapsedTime = 2.5f;
+    private float elapsedTime = 2f;
 	// Use this for initialization
 	void Start () {
         coordenadas = ListaPasos.GetComponentsInChildren<Transform>();
@@ -23,11 +23,18 @@ public class StartCamera : MonoBehaviour {
             elapsedTime -= Time.deltaTime;
             if (elapsedTime < 0) {
                 iteracion++;
-                if (iteracion < coordenadas.Length) {
-                    elapsedTime = 2f;
-                    step = (coordenadas[iteracion].position - coordenadas[iteracion - 1].position) / elapsedTime;
+                if (iteracion < coordenadas.Length)
+                {
+                    elapsedTime = 1.7f;
+                    //step = (coordenadas[iteracion].position - coordenadas[iteracion - 1].position) / elapsedTime;
+                    step = (coordenadas[iteracion].position - Camera.transform.position) / elapsedTime;
                 }
-                else activated = false;
+                else
+                {
+                    GetComponentInParent<Drive>().hasBroom = true;
+                    //GameObject.FindGameObjectWithTag("Command").GetComponent<Commands>().startRecCommand("up");
+                    activated = false;
+                }
             }
             else {
                 Camera.transform.position += step * Time.deltaTime;
