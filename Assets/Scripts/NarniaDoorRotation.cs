@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NarniaDoorRotation : MonoBehaviour {
     public float secsForEachAngle = 0.008f;
+    public string SceneToLoad;
     private float secsToLoadScene = 1.5f;
     public GameObject slider;
 	private Vector3 hingePoint;
@@ -13,7 +15,7 @@ public class NarniaDoorRotation : MonoBehaviour {
     private float angleStep;
     private float angleFinal;
     private bool loadSlider = false;
-    private float secsToLoad;
+    //private float secsToLoad;
     private Image sliderImage;
 	// Use this for initialization
 	void Start () {
@@ -21,7 +23,7 @@ public class NarniaDoorRotation : MonoBehaviour {
 		hingePoint = this.transform.GetChild(0).position;
         angleFinal = 0;
         angleStep = 0;
-        secsToLoad = secsToLoadScene;
+        //secsToLoad = secsToLoadScene;
         sliderImage = slider.GetComponent<Image>();
 		//rotateDoor(90);
 	}
@@ -39,7 +41,7 @@ public class NarniaDoorRotation : MonoBehaviour {
         else
         {
             loadSlider = false;
-            secsToLoad = secsToLoadScene;
+            //secsToLoad = secsToLoadScene;
             slider.SetActive(false);
             sliderImage.fillAmount = 0;
         }
@@ -76,8 +78,10 @@ public class NarniaDoorRotation : MonoBehaviour {
         #region slider
         if (loadSlider)
         {
-            if (secsToLoad > 0) secsToLoad -= Time.deltaTime;
+            //if (secsToLoad > 0) secsToLoad -= Time.deltaTime;
             sliderImage.fillAmount += 1.0f / secsToLoadScene * Time.deltaTime;// *secsToLoad;
+            if (sliderImage.fillAmount > 0.95f && SceneToLoad.Length > 0)
+                SceneManager.LoadScene(SceneToLoad, LoadSceneMode.Single);
         }
         #endregion
     }
