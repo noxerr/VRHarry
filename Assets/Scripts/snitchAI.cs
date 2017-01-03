@@ -6,8 +6,12 @@ public class snitchAI : MonoBehaviour {
 
 	public float speed;
 	public Camera playerCamera;
-	public Vector3 Max;
-	public Vector3 Min;
+	public GameObject Path;
+	public float distanceToPoint;
+	private Transform[] points;
+	private int currentPos;
+	private Vector3 Max = new Vector3(247,21,369);
+	private Vector3 Min = new Vector3(-23,-59,228);
 	private Vector3 playerPos;
 
 	/*Good v0.1 Min Max positions:
@@ -17,6 +21,8 @@ public class snitchAI : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		playerPos = playerCamera.transform.position;
+		points = Path.GetComponentsInChildren<Transform>();
+		currentPos = 1;
 	}
 
 	void moveAway(){
@@ -36,9 +42,31 @@ public class snitchAI : MonoBehaviour {
 			return false;
 		return true;
 	}
+
+	void getNextPoint(){
+		++currentPos;
+		if (currentPos >= points.Length)
+			currentPos = 1;
+	}
+	void followPath(){
+		Vector3 position = points [currentPos].position;
+		if (Vector3.Distance (position, transform.position) < distanceToPoint)
+			getNextPoint ();
+		//transform.position = Vector3.MoveTowards (transform.position, position, speed * Time.deltaTime);
+
+		float step = speed * Time.deltaTime;
+		Vector3 heading = position - transform.position;
+		// divisions are expensive.
+		transform.position += (step * heading) / heading.magnitude;
+	}
 	// Update is called once per frame
 	void Update () {
 		playerPos = playerCamera.transform.position;
-		if (insideBoundaries()) moveAway ();
+		bool isSafeFromPlayer = Vector3.Distance (playerPos, transform.position) > 10;
+		if (isSafeFromPlayer)
+			followPath ();
+		else if (insideBoundaries ())
+			moveAway ();
+		//if (insideBoundaries()) moveAway ();
 	}
 }
