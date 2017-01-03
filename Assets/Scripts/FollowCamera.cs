@@ -8,7 +8,6 @@ public class FollowCamera : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         diffPos = Camera.transform.localPosition - transform.localPosition;
-        Debug.Log("Diffpos: " + diffPos);
 	}
 	
 	// Update is called once per frame
