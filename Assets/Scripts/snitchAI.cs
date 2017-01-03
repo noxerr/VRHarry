@@ -6,8 +6,8 @@ public class snitchAI : MonoBehaviour {
 
 	public float speed;
 	public Camera playerCamera;
-	public Vector3 Max;
-	public Vector3 Min;
+	private Vector3 Max = new Vector3(247,21,369);
+	private Vector3 Min = new Vector3(-23,-59,228);
 	private Vector3 playerPos;
 
 	/*Good v0.1 Min Max positions:
@@ -23,7 +23,7 @@ public class snitchAI : MonoBehaviour {
 		float step = speed * Time.deltaTime;
 		Vector3 heading = playerPos - transform.position;
 		// divisions are expensive.
-		transform.position -= (step * heading) / heading.magnitude;
+		transform.position += (step * heading) / heading.magnitude;
 	}
 	//Check if snitch is inside the pitch
 	bool insideBoundaries(){
