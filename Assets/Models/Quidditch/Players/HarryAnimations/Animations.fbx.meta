@@ -290,6 +290,7 @@ ModelImporter:
     7400006: Hover
     7400008: LookAround
     7400010: Reach
+    7400012: stayMounted
     9500000: //RootNode
     13700000: HarryQuid
   materials:
@@ -648,13 +649,13 @@ ModelImporter:
       - path: Armature/body_root/Body_rHip/Body_rKnee/body_rheel/Body_rBall/Body_rToe/Body_rToe_end
         weight: 1
       - path: Camera
-        weight: 1
+        weight: 0
       - path: HarryQuid
         weight: 1
       - path: HarryQuid/Skin
         weight: 1
       - path: Lamp
-        weight: 1
+        weight: 0
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
@@ -954,13 +955,13 @@ ModelImporter:
       - path: Armature/body_root/Body_rHip/Body_rKnee/body_rheel/Body_rBall/Body_rToe/Body_rToe_end
         weight: 1
       - path: Camera
-        weight: 1
+        weight: 0
       - path: HarryQuid
         weight: 1
       - path: HarryQuid/Skin
         weight: 1
       - path: Lamp
-        weight: 1
+        weight: 0
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
@@ -1566,13 +1567,13 @@ ModelImporter:
       - path: Armature/body_root/Body_rHip/Body_rKnee/body_rheel/Body_rBall/Body_rToe/Body_rToe_end
         weight: 1
       - path: Camera
-        weight: 1
+        weight: 0
       - path: HarryQuid
         weight: 1
       - path: HarryQuid/Skin
         weight: 1
       - path: Lamp
-        weight: 1
+        weight: 0
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
@@ -1872,13 +1873,13 @@ ModelImporter:
       - path: Armature/body_root/Body_rHip/Body_rKnee/body_rheel/Body_rBall/Body_rToe/Body_rToe_end
         weight: 1
       - path: Camera
-        weight: 1
+        weight: 0
       - path: HarryQuid
         weight: 1
       - path: HarryQuid/Skin
         weight: 1
       - path: Lamp
-        weight: 1
+        weight: 0
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
@@ -2178,13 +2179,319 @@ ModelImporter:
       - path: Armature/body_root/Body_rHip/Body_rKnee/body_rheel/Body_rBall/Body_rToe/Body_rToe_end
         weight: 1
       - path: Camera
-        weight: 1
+        weight: 0
       - path: HarryQuid
         weight: 1
       - path: HarryQuid/Skin
         weight: 1
       - path: Lamp
+        weight: 0
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: stayMounted
+      takeName: Armature|Armature|C4D Animation Take|Layer0
+      firstFrame: 55
+      lastFrame: 63
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
         weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/body_root
+        weight: 1
+      - path: Armature/body_root/Body_Broom
+        weight: 1
+      - path: Armature/body_root/Body_Broom/Body_Broom_end
+        weight: 1
+      - path: Armature/body_root/Body_lHip
+        weight: 1
+      - path: Armature/body_root/Body_lHip/Body_lKnee
+        weight: 1
+      - path: Armature/body_root/Body_lHip/Body_lKnee/body_lheel
+        weight: 1
+      - path: Armature/body_root/Body_lHip/Body_lKnee/body_lheel/Body_lBall
+        weight: 1
+      - path: Armature/body_root/Body_lHip/Body_lKnee/body_lheel/Body_lBall/Body_lToe
+        weight: 1
+      - path: Armature/body_root/Body_lHip/Body_lKnee/body_lheel/Body_lBall/Body_lToe/Body_lToe_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeHoodTop
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeHoodTop/Body_capeHoodBot
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeHoodTop/Body_capeHoodBot/Body_capeHoodEnd
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeHoodTop/Body_capeHoodBot/Body_capeHoodEnd/Body_capeHoodEnd_end
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_capelbBackTop
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_capelbBackTop/Body_capelbSideMidUpper
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_capelbBackTop/Body_capelbSideMidUpper/Body_capelbSideMid
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_capelbBackTop/Body_capelbSideMidUpper/Body_capelbSideMid/Body_capelbSideMidLower
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_capelbBackTop/Body_capelbSideMidUpper/Body_capelbSideMid/Body_capelbSideMidLower/Body_capelbSideLower
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_capelbBackTop/Body_capelbSideMidUpper/Body_capelbSideMid/Body_capelbSideMidLower/Body_capelbSideLower/Body_capelbSideTip
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_capelbBackTop/Body_capelbSideMidUpper/Body_capelbSideMid/Body_capelbSideMidLower/Body_capelbSideLower/Body_capelbSideTip/Body_capelbSideBot
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_capelbBackTop/Body_capelbSideMidUpper/Body_capelbSideMid/Body_capelbSideMidLower/Body_capelbSideLower/Body_capelbSideTip/Body_capelbSideBot/Body_capelbSideBot_end
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_capelSideTop
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_capelSideTop/Body_capelSideMidUpper
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_capelSideTop/Body_capelSideMidUpper/Body_capelSideMid
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_capelSideTop/Body_capelSideMidUpper/Body_capelSideMid/Body_capelSideLower
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_capelSideTop/Body_capelSideMidUpper/Body_capelSideMid/Body_capelSideLower/Body_capelSideTip
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_capelSideTop/Body_capelSideMidUpper/Body_capelSideMid/Body_capelSideLower/Body_capelSideTip/Body_capelSideEnd
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_capelSideTop/Body_capelSideMidUpper/Body_capelSideMid/Body_capelSideLower/Body_capelSideTip/Body_capelSideEnd/Body_capelSideEnd_end
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_caperbBackTop
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_caperbBackTop/Body_caperbSideMidUpper
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_caperbBackTop/Body_caperbSideMidUpper/Body_caperbSideMid
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_caperbBackTop/Body_caperbSideMidUpper/Body_caperbSideMid/Body_caperbSideMidLower
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_caperbBackTop/Body_caperbSideMidUpper/Body_caperbSideMid/Body_caperbSideMidLower/Body_caperbSideLower
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_caperbBackTop/Body_caperbSideMidUpper/Body_caperbSideMid/Body_caperbSideMidLower/Body_caperbSideLower/Body_caperbSideTip
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_caperbBackTop/Body_caperbSideMidUpper/Body_caperbSideMid/Body_caperbSideMidLower/Body_caperbSideLower/Body_caperbSideTip/Body_caperbSideBot
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_caperbBackTop/Body_caperbSideMidUpper/Body_caperbSideMid/Body_caperbSideMidLower/Body_caperbSideLower/Body_caperbSideTip/Body_caperbSideBot/Body_caperbSideBot_end
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_caperSideTop
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_caperSideTop/Body_caperSideMidUpper
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_caperSideTop/Body_caperSideMidUpper/Body_caperSideMid
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_caperSideTop/Body_caperSideMidUpper/Body_caperSideMid/Body_caperSideLower
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_caperSideTop/Body_caperSideMidUpper/Body_caperSideMid/Body_caperSideLower/Body_caperSideTip
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_caperSideTop/Body_caperSideMidUpper/Body_caperSideMid/Body_caperSideLower/Body_caperSideTip/Body_capelSideBot
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_capeTop/Body_capeWaist/Body_caperSideTop/Body_caperSideMidUpper/Body_caperSideMid/Body_caperSideLower/Body_caperSideTip/Body_capelSideBot/Body_capelSideBot_end
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_lClav
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_lClav/Body_lShoulder
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_lClav/Body_lShoulder/Body_lElbow
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_lClav/Body_lShoulder/Body_lElbow/Body_lCuff
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_lClav/Body_lShoulder/Body_lElbow/Body_lCuff/Body_lCuffBot
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_lClav/Body_lShoulder/Body_lElbow/Body_lCuff/Body_lCuffBot/Body_lCuffBot_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_lClav/Body_lShoulder/Body_lElbow/Body_lHand
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_lClav/Body_lShoulder/Body_lElbow/Body_lHand/Body_lFingerBackTop
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_lClav/Body_lShoulder/Body_lElbow/Body_lHand/Body_lFingerBackTop/Body_lFingerBackMid
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_lClav/Body_lShoulder/Body_lElbow/Body_lHand/Body_lFingerBackTop/Body_lFingerBackMid/Body_lFingerBot
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_lClav/Body_lShoulder/Body_lElbow/Body_lHand/Body_lFingerBackTop/Body_lFingerBackMid/Body_lFingerBot/Body_lFingerBot_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_lClav/Body_lShoulder/Body_lElbow/Body_lHand/Body_lFingerMid
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_lClav/Body_lShoulder/Body_lElbow/Body_lHand/Body_lFingerMid/Body_lFingerMidMid
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_lClav/Body_lShoulder/Body_lElbow/Body_lHand/Body_lFingerMid/Body_lFingerMidMid/Body_lFingerMidBot
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_lClav/Body_lShoulder/Body_lElbow/Body_lHand/Body_lFingerMid/Body_lFingerMidMid/Body_lFingerMidBot/Body_lFingerMidBot_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_lClav/Body_lShoulder/Body_lElbow/Body_lHand/Body_lThumbTop
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_lClav/Body_lShoulder/Body_lElbow/Body_lHand/Body_lThumbTop/Body_lThumbBot
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_lClav/Body_lShoulder/Body_lElbow/Body_lHand/Body_lThumbTop/Body_lThumbBot/Body_lThumbBot_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__EyeLeft
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__EyeLeft/Body__EyeLeft_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__EyeLidLeftBottom
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__EyeLidLeftBottom/Body__EyeLidLeftBottom_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__EyeLidLeftTop
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__EyeLidLeftTop/Body__EyeLidLeftTop_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__EyeLidRightBottom
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__EyeLidRightBottom/Body__EyeLidRightBottom_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__EyeLidRightTop
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__EyeLidRightTop/Body__EyeLidRightTop_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__EyeRight
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__EyeRight/Body__EyeRight_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__FrontalisLeft
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__FrontalisLeft/Body__CorrugatorLeft
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__FrontalisLeft/Body__CorrugatorLeft/Body__CorrugatorLeft_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__FrontalisRight
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__FrontalisRight/Body__CorrugatorRight
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__FrontalisRight/Body__CorrugatorRight/Body__CorrugatorRight_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__LevatorLabiiLeft
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__LevatorLabiiLeft/Body__LevatorLabiiLeft_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__LevatorLabiiRight
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__LevatorLabiiRight/Body__LevatorLabiiRight_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__Mouth
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__Mouth/Body__jaw
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__Mouth/Body__jaw/Body__jawBot
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__Mouth/Body__jaw/Body__jawBot/Body__jawBot_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__Mouth/Body__jaw/Body__OrbicularisOrisBottom
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__Mouth/Body__jaw/Body__OrbicularisOrisBottom/Body__OrbicularisOrisBottom_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__Mouth/Body__jaw/Body__Tongue
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__Mouth/Body__jaw/Body__Tongue/Body__Tongue_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__Mouth/Body__jaw/Body__TriangularisLeft
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__Mouth/Body__jaw/Body__TriangularisLeft/Body__TriangularisLeft_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__Mouth/Body__jaw/Body__TriangularisRight
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__Mouth/Body__jaw/Body__TriangularisRight/Body__TriangularisRight_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__Mouth/Body__OrbicularisOrisTop
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__Mouth/Body__OrbicularisOrisTop/Body__OrbicularisOrisTop_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__Mouth/Body__ZygomaticLeft
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__Mouth/Body__ZygomaticLeft/Body__ZygomaticLeft_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__Mouth/Body__ZygomaticRight
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_Neck/Body_Head/Body__Mouth/Body__ZygomaticRight/Body__ZygomaticRight_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_rClav
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_rClav/Body_rShoulder
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_rClav/Body_rShoulder/Body_rElbow
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_rClav/Body_rShoulder/Body_rElbow/Body_rCuff
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_rClav/Body_rShoulder/Body_rElbow/Body_rCuff/Body_rCuffBot
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_rClav/Body_rShoulder/Body_rElbow/Body_rCuff/Body_rCuffBot/Body_rCuffBot_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_rClav/Body_rShoulder/Body_rElbow/body_rhand
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_rClav/Body_rShoulder/Body_rElbow/body_rhand/Body_rFingerBackTop
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_rClav/Body_rShoulder/Body_rElbow/body_rhand/Body_rFingerBackTop/Body_rFingerBackMid
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_rClav/Body_rShoulder/Body_rElbow/body_rhand/Body_rFingerBackTop/Body_rFingerBackMid/Body_rFingerBackBot
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_rClav/Body_rShoulder/Body_rElbow/body_rhand/Body_rFingerBackTop/Body_rFingerBackMid/Body_rFingerBackBot/Body_rFingerBackBot_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_rClav/Body_rShoulder/Body_rElbow/body_rhand/Body_rFingerMidTop
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_rClav/Body_rShoulder/Body_rElbow/body_rhand/Body_rFingerMidTop/Body_rFingerMidMid
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_rClav/Body_rShoulder/Body_rElbow/body_rhand/Body_rFingerMidTop/Body_rFingerMidMid/Body_rFingerMidBot
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_rClav/Body_rShoulder/Body_rElbow/body_rhand/Body_rFingerMidTop/Body_rFingerMidMid/Body_rFingerMidBot/Body_rFingerMidBot_end
+        weight: 0
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_rClav/Body_rShoulder/Body_rElbow/body_rhand/Body_rThumb
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_rClav/Body_rShoulder/Body_rElbow/body_rhand/Body_rThumb/Body_rThumbBot
+        weight: 1
+      - path: Armature/body_root/body_lowerspine/Body_midSpine/Body_topSpine/Body_neckBase/Body_rClav/Body_rShoulder/Body_rElbow/body_rhand/Body_rThumb/Body_rThumbBot/Body_rThumbBot_end
+        weight: 0
+      - path: Armature/body_root/Body_rHip
+        weight: 1
+      - path: Armature/body_root/Body_rHip/Body_rKnee
+        weight: 1
+      - path: Armature/body_root/Body_rHip/Body_rKnee/body_rheel
+        weight: 1
+      - path: Armature/body_root/Body_rHip/Body_rKnee/body_rheel/Body_rBall
+        weight: 1
+      - path: Armature/body_root/Body_rHip/Body_rKnee/body_rheel/Body_rBall/Body_rToe
+        weight: 1
+      - path: Armature/body_root/Body_rHip/Body_rKnee/body_rheel/Body_rBall/Body_rToe/Body_rToe_end
+        weight: 0
+      - path: Camera
+        weight: 0
+      - path: HarryQuid
+        weight: 0
+      - path: HarryQuid/Skin
+        weight: 0
+      - path: Lamp
+        weight: 0
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
