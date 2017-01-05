@@ -7,7 +7,7 @@ public class tutorialLogic : MonoBehaviour {
     public Animator animator;
     private Text textField;
     public Drive driveScript;
-    public float secsForEachSentence = 3f;
+    public float secsForEachSentence = 3.5f;
     private float elapsedTimeSinceLast = 0, extraTime = 0;
     private int stringIndex = 0, frasesLength;
     private bool condition;
@@ -21,7 +21,8 @@ public class tutorialLogic : MonoBehaviour {
         "the harder the force is, the faster you\'ll go", //3
         "you can apply force twice, with delay,\nto go faster", //4
         "to slow down, do the opposite", //5
-        "Now, you can look around" //6
+        "you can also look around,\nlike me", //6
+        "you can also look around,\nlike me" //7 -- to stop looping lookAround
     };
 
 	// Use this for initialization
@@ -36,7 +37,7 @@ public class tutorialLogic : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if ((animateDir == 4 || animateDir == 8) && elapsedTimeSinceLast < 0.5f)
+        if ((animateDir == 4 || animateDir == 8) && elapsedTimeSinceLast < 1.5f && elapsedTimeSinceLast > 1f)
         {
             animateTransition += (6 - animateDir) * Time.deltaTime; //formula propia
             animator.SetFloat("Accelerate", animateTransition);
@@ -74,12 +75,16 @@ public class tutorialLogic : MonoBehaviour {
                 break;
 
             case 5: animateDir = 8;
-                animateTransition = 1;
                 extraTime = 0;
                 break;
 
             case 6: animateDir = 0;
-                animateTransition = 1;
+                animator.SetBool("Look", true);
+                break;
+
+            case 7: extraTime = 3f;
+                //condition = false; //in case we want the player to look around too
+                animator.SetBool("Look", false);
                 break;
 
             default: break;
