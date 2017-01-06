@@ -22,7 +22,10 @@ public class tutorialLogic : MonoBehaviour {
         "you can apply force twice, with delay,\nto go faster", //4
         "to slow down, do the opposite", //5
         "you can also look around,\nlike me", //6
-        "you can also look around,\nlike me" //7 -- to stop looping lookAround
+        "you can also look around,\nlike me", //7 -- to stop looping lookAround
+        "Finally, your goal is\to catch the snitch", //8
+        "Finally, your goal is\to catch the snitch", //9
+        "Look at your broom to get it", //10
     };
 
 	// Use this for initialization
@@ -82,11 +85,22 @@ public class tutorialLogic : MonoBehaviour {
                 animator.SetBool("Look", true);
                 break;
 
-            case 7: extraTime = 3f;
+            case 7: extraTime = 2f;
                 //condition = false; //in case we want the player to look around too
                 animator.SetBool("Look", false);
                 break;
 
+            case 8: extraTime = 1f;
+                animator.SetBool("Catch", true);
+                break;
+
+            case 9: extraTime = 0f;
+                animator.SetBool("Catch", false);
+                break;
+
+            case 10: extraTime = 2f;
+                condition = false; //we wait for the player to take the broom
+                break;
             default: break;
 
         }
