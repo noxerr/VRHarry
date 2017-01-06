@@ -20,7 +20,7 @@ public class Drive : MonoBehaviour {
     private Vector3 gyroAccel, movingDir;
 
     private bool moving = false;
-    public float movingThresHold = 0.4f;
+    public float movingThresHold = 0.3f;
 
     private float lastChangeOfMov = 0;
 
