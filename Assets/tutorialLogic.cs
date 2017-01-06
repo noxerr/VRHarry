@@ -8,11 +8,14 @@ public class tutorialLogic : MonoBehaviour {
     private Text textField;
     public Drive driveScript;
     public float secsForEachSentence = 3.5f;
+    public GameObject[] reticleObjects;
+    public GameObject reticle, slider;
     private float elapsedTimeSinceLast = 0, extraTime = 0;
     private int stringIndex = 0, frasesLength;
-    private bool condition;
+    private bool condition, loadSlider = false;
     private int animateDir = 0; //0 no, 4 forward, 8 backwards
     private float animateTransition = 0; //0 standing on broom, 1 leaning forward
+    private Image sliderImage;
 
     private string[] Frases = new string[]{
         "Welcome to the Tutorial", //0
@@ -36,8 +39,26 @@ public class tutorialLogic : MonoBehaviour {
         extraTime = 2.5f;
         frasesLength = Frases.Length;
         condition = true;
+        sliderImage = slider.GetComponent<Image>();
 	}
-	
+
+
+    public void takeBroom(bool enter)
+    {
+        if (enter)
+        {
+            loadSlider = true;
+            slider.SetActive(true);
+        }
+        else
+        {
+            loadSlider = false;
+            slider.SetActive(false);
+            sliderImage.fillAmount = 0;
+        }
+    }
+
+
 	// Update is called once per frame
 	void Update () {
         if ((animateDir == 4 || animateDir == 8) && elapsedTimeSinceLast < 1.5f && elapsedTimeSinceLast > 1f)
@@ -55,7 +76,20 @@ public class tutorialLogic : MonoBehaviour {
         }
         else
         {
-            if (stringIndex >= frasesLength) ;//check if last test is finished, i.e catching snitch
+            if (stringIndex >= frasesLength) {
+                if (loadSlider)
+                {
+                    sliderImage.fillAmount += Time.deltaTime;//
+                    if (sliderImage.fillAmount > 0.95f)
+                    {
+                        driveScript.hasBroom = true;
+                        condition = true;
+                        for (int i = 0; i < reticleObjects.Length; i++)  reticleObjects[i].SetActive(false);
+                        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GvrPointerPhysicsRaycaster>().enabled = false;
+                        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FadeScreen>().FadeOutIn();
+                    }
+                }
+            }//check if last test is finished, i.e catching snitch
             else elapsedTimeSinceLast += Time.deltaTime;
         }
         
@@ -99,6 +133,8 @@ public class tutorialLogic : MonoBehaviour {
                 break;
 
             case 10: extraTime = 2f;
+                for (int i = 0; i < reticleObjects.Length; i++) reticleObjects[i].SetActive(true);
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GvrPointerPhysicsRaycaster>().enabled = true;
                 condition = false; //we wait for the player to take the broom
                 break;
             default: break;

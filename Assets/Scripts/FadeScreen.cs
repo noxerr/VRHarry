@@ -10,6 +10,7 @@ public class FadeScreen : MonoBehaviour {
     public float fadeSpeed = 0.6f;
     public bool sceneStarting = true;
     private float elapsedTime = 0;
+    private bool fadeInOut = false;
 
 
     void Awake()
@@ -23,6 +24,15 @@ public class FadeScreen : MonoBehaviour {
         if (sceneStarting)
             // ... call the StartScene function.
             StartScene();
+        else if (fadeInOut)
+        {
+            if (FadeImg.color.a >= 0.95f)
+            {
+                sceneStarting = true;
+                fadeSpeed = 0.7f;
+            }
+            else FadeToBlack();
+        }
     }
 
 
@@ -55,6 +65,7 @@ public class FadeScreen : MonoBehaviour {
 
             // The scene is no longer starting.
             sceneStarting = false;
+            fadeInOut = false;
         }
     }
 
@@ -86,5 +97,13 @@ public class FadeScreen : MonoBehaviour {
     {
         sceneStarting = false;
         StartCoroutine("EndSceneRoutine", SceneNumber);
+    }
+
+    public void FadeOutIn()
+    {
+        fadeInOut = true;
+        FadeImg.enabled = true;
+        fadeSpeed = 1.5f;
+        elapsedTime = 0;
     }
 }
