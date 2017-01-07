@@ -21,7 +21,7 @@ public class tutorialLogic : MonoBehaviour {
         "Welcome to the Tutorial", //0
         "I'm going to show you\nSome basic movements", //1
         "apply a hard force forward", //2
-        "the harder the force is, the faster you\'ll go", //3
+        "the harder the force is,\nthe faster you\'ll go", //3
         "you can apply force twice, with delay,\nto go faster", //4
         "to slow down, do the opposite", //5
         "you can also look around,\nlike me", //6
@@ -40,6 +40,8 @@ public class tutorialLogic : MonoBehaviour {
         frasesLength = Frases.Length;
         condition = true;
         sliderImage = slider.GetComponent<Image>();
+        UnityEngine.VR.InputTracking.Recenter();
+        GameObject.Find("GvrViewerMain").GetComponent<GvrViewer>().Recenter();
 	}
 
 
