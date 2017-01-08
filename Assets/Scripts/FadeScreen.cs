@@ -9,6 +9,8 @@ public class FadeScreen : MonoBehaviour {
     public Image FadeImg;
     public float fadeSpeed = 0.6f;
     public bool sceneStarting = true;
+    [HideInInspector]
+    public AllLogics logics;
     private float elapsedTime = 0;
     private bool fadeInOut = false;
 
@@ -18,7 +20,7 @@ public class FadeScreen : MonoBehaviour {
         FadeImg.rectTransform.localScale = new Vector2(Screen.width, Screen.height);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // If the scene is starting...
         if (sceneStarting)
@@ -66,6 +68,7 @@ public class FadeScreen : MonoBehaviour {
             // The scene is no longer starting.
             sceneStarting = false;
             fadeInOut = false;
+            if (logics != null) logics.fadeInFinished = true;
         }
     }
 

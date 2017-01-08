@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class tutorialLogic : MonoBehaviour {
+public class tutorialLogic : AllLogics {
     public Animator animator;
     private Text textField;
     public Drive driveScript;
     public float secsForEachSentence = 3.5f;
     public GameObject[] reticleObjects;
-    public GameObject reticle, slider;
+    public GameObject reticle, slider, snitch;
     private float elapsedTimeSinceLast = 0, extraTime = 0;
     private int stringIndex = 0, frasesLength;
     private bool condition, loadSlider = false;
     private int animateDir = 0; //0 no, 4 forward, 8 backwards
     private float animateTransition = 0; //0 standing on broom, 1 leaning forward
     private Image sliderImage;
+    private GameObject wing1, wing2;
 
     private string[] Frases = new string[]{
         "Welcome to the Tutorial", //0
@@ -26,8 +27,8 @@ public class tutorialLogic : MonoBehaviour {
         "to slow down, do the opposite", //5
         "you can also look around,\nlike me", //6
         "you can also look around,\nlike me", //7 -- to stop looping lookAround
-        "Finally, your goal is\to catch the snitch", //8
-        "Finally, your goal is\to catch the snitch", //9
+        "Finally, your goal is\nto catch the snitch", //8
+        "Finally, your goal is\nto catch the snitch", //9
         "Look at your broom to get it", //10
     };
 
@@ -62,7 +63,7 @@ public class tutorialLogic : MonoBehaviour {
 
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         if ((animateDir == 4 || animateDir == 8) && elapsedTimeSinceLast < 1.5f && elapsedTimeSinceLast > 1f)
         {
             animateTransition += (6 - animateDir) * Time.deltaTime; //formula propia
@@ -78,7 +79,8 @@ public class tutorialLogic : MonoBehaviour {
         }
         else
         {
-            if (stringIndex >= frasesLength) {
+            if (stringIndex < frasesLength) elapsedTimeSinceLast += Time.deltaTime;
+            else {
                 if (loadSlider)
                 {
                     sliderImage.fillAmount += Time.deltaTime;//
@@ -89,10 +91,23 @@ public class tutorialLogic : MonoBehaviour {
                         for (int i = 0; i < reticleObjects.Length; i++)  reticleObjects[i].SetActive(false);
                         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GvrPointerPhysicsRaycaster>().enabled = false;
                         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FadeScreen>().FadeOutIn();
+                        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FadeScreen>().logics = this;
+                        snitch.transform.localPosition = new Vector3(116, -57.68f, 302.23f);
+                        snitch.transform.localRotation = Quaternion.Euler(new Vector3(0, 94.66f, 0));
+                        snitch.GetComponent<SnitchAnimation>().enabled = true;
+                        loadSlider = false;
                     }
                 }
-            }//check if last test is finished, i.e catching snitch
-            else elapsedTimeSinceLast += Time.deltaTime;
+                else if (!reticleObjects[0].activeSelf) //SECOND PART OF TUTORIAL
+                {
+                    if (fadeInFinished)
+                    {
+                        snitch.GetComponentInChildren<GvrAudioSource>().enabled = true;
+                        snitch.GetComponent<snitchAI>().isActive = true;
+                        fadeInFinished = false;
+                    }
+                }
+            }
         }
         
 	}

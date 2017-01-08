@@ -7,12 +7,16 @@ public class snitchAI : MonoBehaviour {
 	public float speed;
 	public Camera playerCamera;
 	public GameObject Path;
-	public float distanceToPoint;
+	public float distanceToPoint = 1f;
+    [HideInInspector]
+    public bool isActive = false, isAnimating = false;
 	private Transform[] points;
 	private int currentPos;
 	private Vector3 Max = new Vector3(247,21,369);
 	private Vector3 Min = new Vector3(-23,-59,228);
 	private Vector3 playerPos;
+    
+    private bool animatedWings = false;
 
 	/*Good v0.1 Min Max positions:
 		Max:	247		21		369
@@ -49,24 +53,29 @@ public class snitchAI : MonoBehaviour {
 			currentPos = 1;
 	}
 	void followPath(){
-		Vector3 position = points [currentPos].position;
-		if (Vector3.Distance (position, transform.position) < distanceToPoint)
+		if (Vector3.Distance (points [currentPos].position, transform.position) < distanceToPoint)
 			getNextPoint ();
 		//transform.position = Vector3.MoveTowards (transform.position, position, speed * Time.deltaTime);
 
 		float step = speed * Time.deltaTime;
-		Vector3 heading = position - transform.position;
+        Vector3 heading = points[currentPos].position - transform.position;
 		// divisions are expensive.
 		transform.position += (step * heading) / heading.magnitude;
 	}
 	// Update is called once per frame
-	void Update () {
-		playerPos = playerCamera.transform.position;
-		bool isSafeFromPlayer = Vector3.Distance (playerPos, transform.position) > 10;
-		if (isSafeFromPlayer)
-			followPath ();
-		else if (insideBoundaries ())
-			moveAway ();
-		//if (insideBoundaries()) moveAway ();
+	void FixedUpdate () {
+        if (isActive)
+        {
+            playerPos = playerCamera.transform.position;
+            if (Vector3.Distance(playerPos, transform.position) > 10)
+                followPath();
+            else if (insideBoundaries())
+                moveAway();
+            //if (insideBoundaries()) moveAway ();
+        }
+        else if (isAnimating)
+        {
+
+        }
 	}
 }
