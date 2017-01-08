@@ -30,6 +30,7 @@ public class FadeScreen : MonoBehaviour {
         {
             if (FadeImg.color.a >= 0.95f)
             {
+                logics.fadeOutFinished = true;
                 sceneStarting = true;
                 fadeSpeed = 0.7f;
             }
