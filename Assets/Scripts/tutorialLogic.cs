@@ -36,7 +36,7 @@ public class tutorialLogic : AllLogics {
 	void Start () {
         textField = GetComponent<Text>();
         textField.text = Frases[stringIndex];
-        stringIndex = 1;
+        stringIndex++;
         extraTime = 2.5f;
         frasesLength = Frases.Length;
         condition = true;
@@ -86,7 +86,6 @@ public class tutorialLogic : AllLogics {
                     sliderImage.fillAmount += Time.deltaTime;//
                     if (sliderImage.fillAmount > 0.95f)
                     {
-                        driveScript.hasBroom = true;
                         condition = true;
                         for (int i = 0; i < reticleObjects.Length; i++)  reticleObjects[i].SetActive(false);
                         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GvrPointerPhysicsRaycaster>().enabled = false;
@@ -95,6 +94,7 @@ public class tutorialLogic : AllLogics {
                         snitch.transform.localPosition = new Vector3(116, -57.68f, 302.23f);
                         snitch.transform.localRotation = Quaternion.Euler(new Vector3(0, 94.66f, 0));
                         snitch.GetComponent<SnitchAnimation>().enabled = true;
+                        snitch.GetComponent<snitchAI>().logic = this;
                         loadSlider = false;
                     }
                 }
@@ -104,6 +104,7 @@ public class tutorialLogic : AllLogics {
                     {
                         snitch.GetComponentInChildren<GvrAudioSource>().enabled = true;
                         snitch.GetComponent<snitchAI>().isActive = true;
+                        driveScript.hasBroom = true;
                         fadeInFinished = false;
                     }
                 }
