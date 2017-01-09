@@ -9,7 +9,7 @@ public class tutorialLogic : AllLogics {
     public Drive driveScript;
     public float secsForEachSentence = 3.5f;
     public GameObject[] reticleObjects;
-    public GameObject reticle, slider, snitch;
+    public GameObject reticle, slider, snitch, avatarStanding, avatarMounted, broom;
     private float elapsedTimeSinceLast = 0, extraTime = 0;
     private int stringIndex = 0, frasesLength;
     private bool condition, loadSlider = false;
@@ -23,13 +23,13 @@ public class tutorialLogic : AllLogics {
         "I'm going to show you\nSome basic movements", //1
         "apply a hard force forward", //2
         "the harder the force is,\nthe faster you\'ll go", //3
-        "you can apply force twice, with delay,\nto go faster", //4
-        "to slow down, do the opposite", //5
+        "you can apply force twice,\nwith delay, to go faster", //4
+        "do the opposite to stop", //5
         "you can also look around,\nlike me", //6
         "you can also look around,\nlike me", //7 -- to stop looping lookAround
         "Finally, your goal is\nto catch the snitch", //8
         "Finally, your goal is\nto catch the snitch", //9
-        "Look at your broom to get it", //10
+        "Now, look at your broom", //10
     };
 
 	// Use this for initialization
@@ -91,15 +91,24 @@ public class tutorialLogic : AllLogics {
                         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GvrPointerPhysicsRaycaster>().enabled = false;
                         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FadeScreen>().FadeOutIn();
                         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FadeScreen>().logics = this;
-                        snitch.transform.localPosition = new Vector3(116, -57.68f, 302.23f);
-                        snitch.transform.localRotation = Quaternion.Euler(new Vector3(0, 94.66f, 0));
-                        snitch.GetComponent<SnitchAnimation>().enabled = true;
-                        snitch.GetComponent<snitchAI>().logic = this;
                         loadSlider = false;
                     }
                 }
                 else if (!reticleObjects[0].activeSelf) //SECOND PART OF TUTORIAL
                 {
+                    if (fadeOutFinished)
+                    {
+                        fadeOutFinished = false;
+                        avatarStanding.SetActive(false);
+                        avatarMounted.SetActive(true);
+                        broom.transform.parent = avatarMounted.transform;
+                        broom.transform.localPosition = new Vector3(-0.19f, 2.37f, 0.8356f);
+                        broom.transform.localRotation = Quaternion.Euler(new Vector3(5.71f, 175, 0));
+                        snitch.transform.localPosition = new Vector3(116, -57.68f, 302.23f);
+                        snitch.transform.localRotation = Quaternion.Euler(new Vector3(0, 94.66f, 0));
+                        snitch.GetComponent<SnitchAnimation>().enabled = true;
+                        snitch.GetComponent<snitchAI>().logic = this;
+                    }
                     if (fadeInFinished)
                     {
                         snitch.GetComponentInChildren<GvrAudioSource>().enabled = true;
