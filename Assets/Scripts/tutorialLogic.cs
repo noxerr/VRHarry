@@ -23,7 +23,7 @@ public class tutorialLogic : AllLogics {
         "I'm going to show you\nSome basic movements", //1
         "apply a hard force forward", //2
         "the harder the force is,\nthe faster you\'ll go", //3
-        "you can apply force twice,\nwith delay, to go faster", //4
+        "the harder the force is,\nthe faster you\'ll go",//"you can apply force twice,\nwith delay, to go faster", //4
         "do the opposite to stop", //5
         "you can also look around,\nlike me", //6
         "you can also look around,\nlike me", //7 -- to stop looping lookAround
@@ -108,6 +108,7 @@ public class tutorialLogic : AllLogics {
                         snitch.transform.localRotation = Quaternion.Euler(new Vector3(0, 94.66f, 0));
                         snitch.GetComponent<SnitchAnimation>().enabled = true;
                         snitch.GetComponent<snitchAI>().logic = this;
+                        textField.text = "";
                     }
                     if (fadeInFinished)
                     {
@@ -135,7 +136,7 @@ public class tutorialLogic : AllLogics {
 
             case 4: animateDir = 0;
                 animateTransition = 1;
-                extraTime = 1;
+                extraTime = 0;
                 break;
 
             case 5: animateDir = 8;
