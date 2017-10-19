@@ -15,7 +15,6 @@ public class StartCamera : MonoBehaviour {
 	void Start () {
         coordenadas = ListaPasos.GetComponentsInChildren<Transform>();
         step = Vector3.zero;
-        Debug.Log("im using it");
 	}
 	
 	// Update is called once per frame

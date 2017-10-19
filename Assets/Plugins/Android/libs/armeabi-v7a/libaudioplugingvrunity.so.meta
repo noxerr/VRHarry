@@ -3,30 +3,14 @@ guid: 930e4f4b6f34d4f9888fbf4847f66b80
 timeCreated: 1480973809
 licenseType: Pro
 PluginImporter:
-  externalObjects: {}
-  serializedVersion: 2
+  serializedVersion: 1
   iconMap: {}
   executionOrder: {}
-  isPreloaded: 1
-  isOverridable: 0
+  isPreloaded: 0
   platformData:
-  - first:
-      Android: Android
-    second:
+    Any:
       enabled: 1
-      settings:
-        CPU: ARMv7
-  - first:
-      Any: 
-    second:
-      enabled: 0
       settings: {}
-  - first:
-      Editor: Editor
-    second:
-      enabled: 0
-      settings:
-        DefaultValueInitialized: true
   userData: 
   assetBundleName: 
   assetBundleVariant: 
