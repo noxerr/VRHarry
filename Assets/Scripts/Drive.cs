@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Drive : MonoBehaviour {
-    public GameObject Camera;
+    public GameObject Camera, avatarMounted;
     //[TextArea]
     [Header("Driving Settings")]
     [Tooltip("true means you look where you want to go, false works with experienced kind of movements")]
@@ -14,13 +14,12 @@ public class Drive : MonoBehaviour {
 
     private float LowPassFilterFactor = 0.8f;
     private Vector3 lowPassValue = Vector3.zero;
-
     private Gyroscope gyro;
     private Rigidbody rb;
     private Vector3 gyroAccel, movingDir;
 
     private bool moving = false;
-    public float movingThresHold = 0.4f;
+    public float movingThresHold = 0.1f;
 
     private float lastChangeOfMov = 0;
 
@@ -31,6 +30,8 @@ public class Drive : MonoBehaviour {
         gyro = Input.gyro;
         rb = Camera.GetComponent<Rigidbody>();
         movingDir = Vector3.zero;
+        //startRotation = avatarMounted.transform.rotation.eulerAngles;
+        //aimRotation = new Vector3();
 	}
 
 
@@ -42,7 +43,7 @@ public class Drive : MonoBehaviour {
             if (lastChangeOfMov > 0) lastChangeOfMov -= Time.deltaTime;
             if (moving)
             {
-                if (gyroAccel.z < -movingThresHold && lastChangeOfMov <= 0) { moving = false; lastChangeOfMov = 1; movingDir = Vector3.zero; }
+                if (gyroAccel.z < -movingThresHold && lastChangeOfMov <= 0) { moving = false; lastChangeOfMov = 0.3f; movingDir = Vector3.zero; }
                 else if (driveConMirada) movingDir = Camera.transform.forward;
 
                 //aplicar fuerzas
@@ -52,11 +53,10 @@ public class Drive : MonoBehaviour {
             else
             {
                 //aceleramos?
-                if (gyroAccel.z > movingThresHold && lastChangeOfMov <= 0) { moving = true; lastChangeOfMov = 1; }
-
+                if (gyroAccel.z > movingThresHold && lastChangeOfMov <= 0) { moving = true; lastChangeOfMov = 0.3f; }
+                rb.velocity = Vector3.zero;
             }
-
-            
+            avatarMounted.transform.rotation = Quaternion.Lerp(Camera.transform.rotation, avatarMounted.transform.rotation, 0.9f);
 
         }
         
