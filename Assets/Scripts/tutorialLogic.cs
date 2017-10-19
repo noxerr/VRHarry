@@ -41,8 +41,8 @@ public class tutorialLogic : AllLogics {
         frasesLength = Frases.Length;
         condition = true;
         sliderImage = slider.GetComponent<Image>();
-        UnityEngine.VR.InputTracking.Recenter();
-        GameObject.Find("GvrViewerMain").GetComponent<GvrViewer>().Recenter();
+        UnityEngine.XR.InputTracking.Recenter();
+        //GameObject.Find("GvrViewerMain").GetComponent<GvrViewer>().Recenter();
 	}
 
 
@@ -112,7 +112,7 @@ public class tutorialLogic : AllLogics {
                     }
                     if (fadeInFinished)
                     {
-                        snitch.GetComponentInChildren<GvrAudioSource>().enabled = true;
+                        snitch.GetComponentInChildren<AudioSource>().enabled = true;
                         snitch.GetComponent<snitchAI>().isActive = true;
                         driveScript.hasBroom = true;
                         fadeInFinished = false;
