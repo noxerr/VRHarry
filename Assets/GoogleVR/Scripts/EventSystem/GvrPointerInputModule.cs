@@ -89,7 +89,7 @@ public class GvrPointerInputModule : BaseInputModule {
 
     bool isVrModeEnabled = !vrModeOnly;
 #if UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
-    isVrModeEnabled |= UnityEngine.XR.XRSettings.enabled;
+    isVrModeEnabled |= VRSettings.enabled;
 #else
     isVrModeEnabled |= GvrViewer.Instance.VRModeEnabled;
 #endif  // UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
@@ -163,7 +163,7 @@ public class GvrPointerInputModule : BaseInputModule {
   private void CastRay() {
     Quaternion headOrientation;
     #if UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
-    headOrientation = UnityEngine.XR.InputTracking.GetLocalRotation(UnityEngine.XR.XRNode.Head);
+    headOrientation = InputTracking.GetLocalRotation(VRNode.Head);
     #else
     headOrientation = GvrViewer.Instance.HeadPose.Orientation;
     #endif  // UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
@@ -384,9 +384,9 @@ public class GvrPointerInputModule : BaseInputModule {
     int viewportHeight = Screen.height;
     #if UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR) && UNITY_ANDROID
     // GVR native integration is supported.
-    if (UnityEngine.XR.XRSettings.enabled) {
-      viewportWidth = UnityEngine.XR.XRSettings.eyeTextureWidth;
-      viewportHeight = UnityEngine.XR.XRSettings.eyeTextureHeight;
+    if (VRSettings.enabled) {
+      viewportWidth = VRSettings.eyeTextureWidth;
+      viewportHeight = VRSettings.eyeTextureHeight;
     }
     #endif  // UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR) && UNITY_ANDROID
 
