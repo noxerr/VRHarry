@@ -93,7 +93,7 @@ public class GvrViewer : MonoBehaviour {
 #if !UNITY_HAS_GOOGLEVR || UNITY_EDITOR
       return vrModeEnabled;
 #else
-      return UnityEngine.XR.XRSettings.enabled;
+      return UnityEngine.VR.VRSettings.enabled;
 #endif  // !UNITY_HAS_GOOGLEVR || UNITY_EDITOR
     }
     set {
