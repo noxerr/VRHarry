@@ -11,7 +11,7 @@ public class FollowCamera : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void LateUpdate () {
         transform.localPosition = Camera.transform.localPosition - diffPos;
 	}
 }
