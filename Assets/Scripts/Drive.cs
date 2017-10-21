@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Drive : MonoBehaviour {
     public GameObject Camera, avatarMounted;
@@ -11,15 +12,21 @@ public class Drive : MonoBehaviour {
     public bool driveConMirada = false;
     public bool hasBroom = false;
     public float maxSpeed = 8;
+    public Text testDebug;
+
+    public Rigidbody rb;
+
+    
 
     private float LowPassFilterFactor = 0.8f;
     private Vector3 lowPassValue = Vector3.zero;
     private Gyroscope gyro;
-    private Rigidbody rb;
-    private Vector3 gyroAccel, movingDir;
+    private Vector3 gyroAccel, accel2;
 
     private bool moving = false;
-    public float movingThresHold = 0.1f;
+    [Space(10)]
+    public float movingThresHold = 0.2f;
+    public float timeColddownLastmove = 0.5f;
 
     private float lastChangeOfMov = 0;
 
@@ -28,10 +35,6 @@ public class Drive : MonoBehaviour {
 	void Start () {
         Input.gyro.enabled = true;
         gyro = Input.gyro;
-        rb = Camera.GetComponent<Rigidbody>();
-        movingDir = Vector3.zero;
-        //startRotation = avatarMounted.transform.rotation.eulerAngles;
-        //aimRotation = new Vector3();
 	}
 
 
@@ -39,25 +42,32 @@ public class Drive : MonoBehaviour {
 	void FixedUpdate () {
         if (hasBroom)
         {
+            avatarMounted.transform.rotation = Quaternion.Lerp(Camera.transform.rotation, avatarMounted.transform.rotation, 0.9f);
             gyroAccel = gyro.userAcceleration;
+            accel2 = Input.acceleration;
             if (lastChangeOfMov > 0) lastChangeOfMov -= Time.deltaTime;
             if (moving)
             {
-                if (gyroAccel.z < -movingThresHold && lastChangeOfMov <= 0) { moving = false; lastChangeOfMov = 0.3f; movingDir = Vector3.zero; }
-                else if (driveConMirada) movingDir = Camera.transform.forward;
+                if (gyroAccel.z < -movingThresHold && lastChangeOfMov <= 0)
+                {
+                    moving = false;
+                    lastChangeOfMov = timeColddownLastmove;
+                    rb.velocity = Vector3.zero;
+                }
+                else if (driveConMirada) rb.velocity = avatarMounted.transform.forward * maxSpeed; //rb.velocity = Camera.transform.forward * maxSpeed;
+                testDebug.text = "gyrAccel: " + accel2 + " --grav: " + gyro.gravity;
 
-                //aplicar fuerzas
-                //rb.AddForce(movingDir, ForceMode.VelocityChange);
-                rb.velocity = movingDir*maxSpeed;
             }
-            else
+            else //speed up?
             {
-                //aceleramos?
-                if (gyroAccel.z > movingThresHold && lastChangeOfMov <= 0) { moving = true; lastChangeOfMov = 0.3f; }
-                rb.velocity = Vector3.zero;
+                if (gyroAccel.z > movingThresHold && lastChangeOfMov <= 0)
+                {
+                    moving = true;
+                    lastChangeOfMov = timeColddownLastmove;
+                    rb.velocity = avatarMounted.transform.forward * maxSpeed; //rb.velocity = Camera.transform.forward
+                } 
+                testDebug.text = "gyrAccel: " + accel2 + " --grav: " + gyro.gravity;
             }
-            avatarMounted.transform.rotation = Quaternion.Lerp(Camera.transform.rotation, avatarMounted.transform.rotation, 0.9f);
-
         }
         
         /*AccelerationEvent[] events = Input.accelerationEvents;
