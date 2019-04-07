@@ -37,10 +37,18 @@ public class Drive : MonoBehaviour {
         gyro = Input.gyro;
 	}
 
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            moving = !moving;
+            rb.velocity = Vector3.zero;
+        }
+    }
 
-	// Update is called once per frame
-	void FixedUpdate () {
-        if (Input.GetKeyDown(KeyCode.D)) moving = !moving;
+    // Update is called once per frame
+    void FixedUpdate () {
+        
         if (hasBroom)
         {
             avatarMounted.transform.rotation = Quaternion.Lerp(Camera.transform.rotation, avatarMounted.transform.rotation, 0.9f);
@@ -56,7 +64,7 @@ public class Drive : MonoBehaviour {
                     rb.velocity = Vector3.zero;
                 }
                 else if (driveConMirada) rb.velocity = avatarMounted.transform.forward * maxSpeed; //rb.velocity = Camera.transform.forward * maxSpeed;
-                testDebug.text = "gyrAccel: " + accel2 + " --grav: " + gyro.gravity;
+                //testDebug.text = "gyrAccel: " + accel2 + " --grav: " + gyro.gravity;
 
             }
             else //speed up?
@@ -67,7 +75,7 @@ public class Drive : MonoBehaviour {
                     lastChangeOfMov = timeColddownLastmove;
                     rb.velocity = avatarMounted.transform.forward * maxSpeed; //rb.velocity = Camera.transform.forward
                 } 
-                testDebug.text = "gyrAccel: " + accel2 + " --grav: " + gyro.gravity;
+                //testDebug.text = "gyrAccel: " + accel2 + " --grav: " + gyro.gravity;
             }
         }
         
