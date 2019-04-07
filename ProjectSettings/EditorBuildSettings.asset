@@ -17,6 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TutorialScene.unity
     guid: df6aca7acafd9a84ab945448de9a2d00
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Campo.unity
     guid: 014f32678f043314aa4d871d73d4803f
+  m_configObjects: {}
