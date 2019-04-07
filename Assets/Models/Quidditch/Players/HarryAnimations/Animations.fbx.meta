@@ -1,9 +1,7 @@
 fileFormatVersion: 2
 guid: 6b482cb7b38d00f4495d236911c72c91
-timeCreated: 1483555651
-licenseType: Free
 ModelImporter:
-  serializedVersion: 19
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     100002: Armature
@@ -293,24 +291,107 @@ ModelImporter:
     7400012: stayMounted
     9500000: //RootNode
     13700000: HarryQuid
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None.005
+    second: {fileID: 2100000, guid: 2cfb818a5a2355f4aa3cdbb9acc2189f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_0.005
+    second: {fileID: 2100000, guid: bba4f45efc229f743adb226726c2adf9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_1.005
+    second: {fileID: 2100000, guid: cbfc8426601c9da4ea0e2501a87819e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_10.005
+    second: {fileID: 2100000, guid: a9c814e1882081240a3d61c17dda6da3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_11.005
+    second: {fileID: 2100000, guid: b4822dc824f4bc94abf16863d10c3390, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_12.005
+    second: {fileID: 2100000, guid: 8f5a93b0b5e9b95478e8d43214de0d7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_13.005
+    second: {fileID: 2100000, guid: dd591796fd4829f49b96331f39482c77, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_2.005
+    second: {fileID: 2100000, guid: 2ef7fb6b591e17e4cb37c9873d4c7c87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_3.005
+    second: {fileID: 2100000, guid: c0da3ac1791834d439ddb34c0fafe93b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_4.005
+    second: {fileID: 2100000, guid: 744761bdc69e46a4b8acd212093531ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_5.005
+    second: {fileID: 2100000, guid: 075ea6cc0ab5183498488e60d9c33e18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_6.005
+    second: {fileID: 2100000, guid: 1cb20cd019124b64984bf99e86eafba6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_7.005
+    second: {fileID: 2100000, guid: 2075dd65b8de90e409db8334b30cabfe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_8.005
+    second: {fileID: 2100000, guid: d895eb66db7852948b469f2393f0d65d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_9.005
+    second: {fileID: 2100000, guid: 840f26188b614ae408c993b506095b24, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Inbetween bone rotation
+      in configuration does not match rotation in animation file:\n\t'Body_lBall'
+      : rotation error = 0.382003 deg\n\t'Body_rBall' : rotation error = 0.400522
+      deg\n\t'Body_Neck' : rotation error = 16.869864 deg\n\t'Body_lThumbTop' : rotation
+      error = 21.042561 deg\n\t'Body_rFingerBackTop' : rotation error = 44.223179
+      deg\n\t'Body_rFingerMidTop' : rotation error = 42.244286 deg\n"
     animationImportErrors: 
-    animationImportWarnings: "Avatar Rig Configuration mis-match. Inbetween bone rotation
-      in configuration does not match rotation in animation file\nAnimations\nClip
-      'Armature|Armature|C4D Animation Take|Layer0' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'Body_lBall' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\t'Body_rBall' is inbetween
-      humanoid transforms and has rotation animation that will be discarded.\n\t'body_lowerspine'
+    animationImportWarnings: "\nClip 'Armature|Armature|C4D Animation Take|Layer0'
+      has import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Body_lBall' is
+      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Body_rBall'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'body_lowerspine'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Body_Neck'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Body_lThumbTop'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Body_lFingerBackTop'
@@ -346,12 +427,15 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
       name: Mount
@@ -2501,13 +2585,18 @@ ModelImporter:
     globalScale: 1.2
     meshCompression: 0
     addColliders: 0
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -2517,6 +2606,7 @@ ModelImporter:
     normalSmoothAngle: 100
     normalImportMode: 1
     tangentImportMode: 3
+    normalCalculationMode: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

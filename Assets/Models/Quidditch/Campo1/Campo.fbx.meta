@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 8d691ea42ef14ca42826395ec2307829
-timeCreated: 1482607831
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -19,14 +17,19 @@ ModelImporter:
     2300002: DrawCall_0193_MeshPart1
     2300004: DrawCall_0193_MeshPart2
     2300006: DrawCall_0193_MeshPart3
+    2300008: //RootNode
     3300000: DrawCall_0193_MeshPart0
     3300002: DrawCall_0193_MeshPart1
     3300004: DrawCall_0193_MeshPart2
     3300006: DrawCall_0193_MeshPart3
+    3300008: //RootNode
     4300000: DrawCall_0193_MeshPart0
     4300002: DrawCall_0193_MeshPart1
     4300004: DrawCall_0193_MeshPart2
     4300006: DrawCall_0193_MeshPart3
+    4300008: DrawCall_0193
+    6400000: //RootNode
+    2186277476908879412: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -147,7 +150,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 2bdae18b_dds
-    second: {fileID: 2100000, guid: 7e6e8ad4ad6e54b458724b534fdd6df9, type: 2}
+    second: {fileID: 2100000, guid: b01af9ba3c433904bb4ee49ff6caf6e5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -167,7 +170,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 2fd5bc45_dds
-    second: {fileID: 2100000, guid: 21b67e5bfba99504c879262be05d001d, type: 2}
+    second: {fileID: 2100000, guid: 150bfab708b15e44f8d8cf7ad53f0fb6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -577,7 +580,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: babaf5bc_dds
-    second: {fileID: 2100000, guid: 265f5e1e2bb32de4da23fa657a0fe783, type: 2}
+    second: {fileID: 2100000, guid: 217a3237b288e1f4aa14ee41f2fd8385, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -722,7 +725,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: ed46cdfc_dds
-    second: {fileID: 2100000, guid: 1102cb1f283015840a62ebbc6015183d, type: 2}
+    second: {fileID: 2100000, guid: 1a95b8af54ac377418a0e2a1a08a1372, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -767,7 +770,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: f90f874b_dds
-    second: {fileID: 2100000, guid: db24708faf4c64040aa7134941a35b92, type: 2}
+    second: {fileID: 2100000, guid: ce3b87ce54d1d25459fc1d75041e6e67, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -801,6 +804,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -814,7 +818,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
@@ -825,6 +829,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -832,8 +838,8 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 180
-    normalImportMode: 0
-    tangentImportMode: 0
+    normalImportMode: 1
+    tangentImportMode: 3
     normalCalculationMode: 0
   importAnimation: 1
   copyAvatar: 0

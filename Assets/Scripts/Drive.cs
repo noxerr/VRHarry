@@ -40,6 +40,7 @@ public class Drive : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
+        if (Input.GetKeyDown(KeyCode.D)) moving = !moving;
         if (hasBroom)
         {
             avatarMounted.transform.rotation = Quaternion.Lerp(Camera.transform.rotation, avatarMounted.transform.rotation, 0.9f);
