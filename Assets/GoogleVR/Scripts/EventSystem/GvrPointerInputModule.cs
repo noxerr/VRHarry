@@ -88,11 +88,11 @@ public class GvrPointerInputModule : BaseInputModule {
   public override bool ShouldActivateModule() {
 
     bool isVrModeEnabled = !vrModeOnly;
-#if UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
+//#if UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
     isVrModeEnabled |= UnityEngine.XR.XRSettings.enabled;
-#else
-    isVrModeEnabled |= GvrViewer.Instance.VRModeEnabled;
-#endif  // UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
+//#else
+    //isVrModeEnabled |= GvrViewer.Instance.VRModeEnabled;
+//#endif  // UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
 
     bool activeState = base.ShouldActivateModule() && isVrModeEnabled;
 
@@ -162,11 +162,11 @@ public class GvrPointerInputModule : BaseInputModule {
 
   private void CastRay() {
     Quaternion headOrientation;
-    #if UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
+    //#if UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
     headOrientation = UnityEngine.XR.InputTracking.GetLocalRotation(UnityEngine.XR.XRNode.Head);
-    #else
-    headOrientation = GvrViewer.Instance.HeadPose.Orientation;
-    #endif  // UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
+    //#else
+    //headOrientation = GvrViewer.Instance.HeadPose.Orientation;
+    //#endif  // UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
 
     Vector2 headPose = NormalizedCartesianToSpherical(headOrientation * Vector3.forward);
 
